@@ -11,8 +11,16 @@ def get_token():
 token = get_token()
 bot = telebot.TeleBot(token)
 
-@bot.message_handler(commands=["start"])
-def main(message):
-    bot.send_message(message.from_user.id, "Тут пока ничего нет, но есть мои контакты: \nhttps://t.me/sitectov \nhttps://github.com/0xo7nik \nhttps://vk.com/sitect")
+#@bot.message_handler(commands=["start"])
+#def main(message):
+#    bot.send_message(message.from_user.id, "Привет, чем могу помочь?")
 
+@bot.message_handler(content_types=['text', 'document', 'audio'])
+def get_text_messages(message):
+    if message.text == "/start":
+        bot.send_message(message.from_user.id, "Привет, чем я могу тебе помочь?")
+    elif message.text == "/help":
+        bot.send_message(message.from_user.id, "Напиши привет")
+    else:
+        bot.send_message(message.from_user.id, "Я тебя не понимаю. Напиши /help.")
 bot.polling(none_stop=True, interval=0, timeout=120)
