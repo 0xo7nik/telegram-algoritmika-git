@@ -13,6 +13,6 @@ bot = telebot.TeleBot(token)
 
 @bot.message_handler(commands=["start"])
 def main(message):
-    bot.send_message(message.from_user.id, "Привет, я бот")
+    bot.send_message(message.from_user.id, "Тут пока ничего нет, но есть мои контакты: https://t.me/sitectov \nhttps://github.com/0xo7nik \nhttps://vk.com/sitect")
 
 bot.polling(none_stop=True, interval=0, timeout=120)
