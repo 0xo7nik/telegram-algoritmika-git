@@ -15,14 +15,18 @@ bot = telebot.TeleBot(token)
 #def main(message):
 #    bot.send_message(message.from_user.id, "Привет, чем могу помочь?")
 
+privet = "Привет"
+privet.lower()
+
 @bot.message_handler(content_types=['text', 'document', 'audio'])
 def get_text_messages(message):
+    global privet
     if message.text == "/start":
         bot.send_message(message.from_user.id, "Привет, чем я могу тебе помочь?")
+    elif message.text == privet:
+        bot.send_message(message.from_user.id, "QQ")
     elif message.text == "/help":
         bot.send_message(message.from_user.id, "Напиши привет")
-    elif message.text == "Привет":
-        bot.send_message(message.from_user.id, "QQ")
     else:
         bot.send_message(message.from_user.id, "Я тебя не понимаю. Напиши /help.")
 bot.polling(none_stop=True, interval=0, timeout=120)
