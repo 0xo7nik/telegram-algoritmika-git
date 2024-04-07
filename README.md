@@ -1,5 +1,5 @@
 # Здесь заготовка под бота от алгоритмики
-## Мой бот: <u>[@algo0xo7nik_bot](https://t.me/algo0xo7nik_bot/)</u>
+## Мой бот: <ins>[@algo0xo7nik_bot](https://t.me/algo0xo7nik_bot/)</ins>
 ### Он спросит тебя
 #### Чем могу помочь?
 ##### Скажи привет
