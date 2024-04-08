@@ -20,12 +20,9 @@ bot = telebot.TeleBot(token)
 def main(message):
     bot.send_message(message.from_user.id, "Привет, чем я могу тебе помочь?")
     
-privet = "Привет"
-privet = privet.lower()
-
 @bot.message_handler(content_types=['text', 'document', 'audio'])
 def get_text_messages(message):
-    if message.text == privet:
+    if message.text.lower() == "привет":
         bot.send_message(message.from_user.id, "QQ")
     elif message.text == "/help":
         bot.send_message(message.from_user.id, "Напиши привет")
