@@ -20,7 +20,7 @@ bot = telebot.TeleBot(token)
 def main(message):
     bot.send_message(message.from_user.id, "Привет, чем я могу тебе помочь?")
     
-privet = "Привет"
+privet = "привет"
 privet = privet.lower()
 
 @bot.message_handler(content_types=['text', 'document', 'audio'])
