@@ -1,7 +1,11 @@
 # Здесь заготовка под бота от алгоритмики
+<<<<<<< HEAD
 
 ## Мой бот: `<ins>`[@algo0xo7nik_bot](https://t.me/algo0xo7nik_bot/)`</ins>`
 
+=======
+## Мой бот: <ins>[@algo0xo7nik_bot](https://t.me/algo0xo7nik_bot/)</ins>
+>>>>>>> 62f2a23dfe1a7930da99561495da1848bd83361c
 ### Он спросит тебя
 
 #### Чем могу помочь?
