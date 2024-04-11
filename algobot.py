@@ -11,21 +11,25 @@ def get_token():
 token = get_token()
 bot = telebot.TeleBot(token)
 
-@bot.message_handler(commands=["start"])
+@bot.message_handler(commands=["start", "help"])
 def send_start(message):
     if message.text.lower() == "/start":
-        bot.send_message(message.from_user.id, "Привет, я бот математик. Могу помочь с любым математическим примером. Напиши, например, 2+2 и я тебе сразу отвечу")
-
-@bot.message_handler(commands=["answer"])
-def ans1(message):
-    bot.send_message(message.from_user.id, "Напиши пример")
+        bot.send_message(message.from_user.id, "Привет! Я могу помочь тебе с любым математическим выражением.")
+    if message.text.lower() == "/help":
+        bot.send_message(message.from_user.id, "Напиши выражение, которое надо решить")
 
 @bot.message_handler(content_types=['text'])
-def ans2(message):
-    num1 = message.interval
-    num2 = message.interval
-    if message.text == num1 and num2:
-        bot.send_message(message.from_user.id, message.send_message)
-    print(message)
+def send_answer(message):
+    if message.text.lower():
+        bot.send_message(message.from_user.id, "1")
 
 bot.polling(none_stop=True, interval=0, timeout=120)
+
+
+@bot.message_handler(func=lambda message: True)
+def calc(message): 
+#    try: 
+#        result = parser.parse(message.text)
+#        bot.send_message(message.chat.id, str(result)) 
+#    except:
+    pass
