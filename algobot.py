@@ -25,13 +25,5 @@ def ans2(message):
     num2 = message.text
     if message.text == num1 and num2:
         bot.send_message(message.from_user.id, f"{num1}" + f"{num2}")
-#@bot.message_handler(content_types=['text'])
-#def get_text_messages(message):
-#    if message.text == "Реши пример":
-#        bot.send_message(message.from_user.id, "Пиши")
-#        if message.text == 
-#    elif message.text == "/help":
-#        bot.send_message(message.from_user.id, "Напиши пример, который нужно решить")
-#    else:
-#        bot.send_message(message.from_user.id, "Я тебя не понимаю. Напиши /help.")
+
 bot.polling(none_stop=True, interval=0, timeout=120)
