@@ -12,8 +12,9 @@ token = get_token()
 bot = telebot.TeleBot(token)
 
 @bot.message_handler(commands=["start"])
-def main(message):
-    bot.send_message(message.from_user.id, "Привет, я бот математик. Могу помочь с любым математическим примером. Напиши, например, 2+2 и я тебе сразу отвечу")
+def send_start(message):
+    if message.text.lower() == "/start":
+        bot.send_message(message.from_user.id, "Привет, я бот математик. Могу помочь с любым математическим примером. Напиши, например, 2+2 и я тебе сразу отвечу")
 
 @bot.message_handler(commands=["answer"])
 def ans1(message):
@@ -21,9 +22,10 @@ def ans1(message):
 
 @bot.message_handler(content_types=['text'])
 def ans2(message):
-    num1 = message.text
-    num2 = message.text
+    num1 = message.interval
+    num2 = message.interval
     if message.text == num1 and num2:
-        bot.send_message(message.from_user.id, f"{num1}" + f"{num2}")
+        bot.send_message(message.from_user.id, message.send_message)
+    print(message)
 
 bot.polling(none_stop=True, interval=0, timeout=120)
