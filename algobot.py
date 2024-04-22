@@ -16,12 +16,12 @@ bot = telebot.TeleBot(token)
 def send_start(message):
     if message.text.lower() == "/start":
         bot.send_message(message.from_user.id, "Привет! Я могу помочь тебе с любым математическим выражением.")
-        if message.from_user.id in users.keys():
-            bot.send_message(message.from_user.id, "Ты уже смешарик")
         users[message.from_user.id] = {
             'action': 'start',
             'data': []
         }
+#        if message.from_user.id in users.keys():
+#            bot.send_message(message.from_user.id, "Не нужно нажимать /start еще раз")
     if message.text.lower() == "/help":
         bot.send_message(message.from_user.id, "Напиши выражение, которое надо решить")
 
