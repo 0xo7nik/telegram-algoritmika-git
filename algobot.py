@@ -33,7 +33,7 @@ def send_start(message):
     if message.text.lower() == "/circle_area":
         radius = bot.send_message(message.from_user.id, "Радиус окружности?")
         bot.register_next_step_handler(radius, get_radius)
-    
+
 #triangle_area
 def get_length(message):
     global length, height
