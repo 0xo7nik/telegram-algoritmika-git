@@ -19,7 +19,7 @@ length, height = 0, 0
 @bot.message_handler(commands=["start", "maths", "triangle_area", "circle_area"])
 def send_start(message):
     if message.text.lower() == "/start":
-        bot.send_message(message.from_user.id, "Привет! Я могу помочь тебе посчитать площадь треугольника по команде /area, а также могу посчитать любое математическое выражение по команде /maths.")
+        bot.send_message(message.from_user.id, "Привет! Я могу помочь тебе посчитать площадь треугольника по команде /area, посчитать любое математическое выражение по команде /maths, а также посчитать площадь круга по команде /circle_area.")
         users[message.from_user.id] = {
             'action': 'start',
             'data': []
